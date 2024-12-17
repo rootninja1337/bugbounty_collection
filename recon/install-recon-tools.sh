@@ -29,13 +29,27 @@ fi
 while true; do
     read -p "Change pdtm binary path to $HOME/go/bin?(y/n) " yn
     case $yn in
-        [Yy]* ) echo "binary-path: $HOME/go/bin" >> $HOME/.config/pdtm/config.yaml; break;;
+        [Yy]* ) echo -e "\nbinary-path: $HOME/go/bin" >> $HOME/.config/pdtm/config.yaml; break;;
         [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
 
 pdtm -ia
+
+echo -e "\033[32m ####### Installing urlfinder ####### \033[0m"
+go install -v github.com/projectdiscovery/urlfinder/cmd/urlfinder@latest
+
+####################################################################################
+
+echo -e "\033[32m ####### Installing subhunter ####### \033[0m"
+go install -v github.com/Nemesis0U/Subhunter@latest
+mv $HOME/go/bin/Subhunter $HOME/go/bin/subhunter
+
+####################################################################################
+
+echo -e "\033[32m ####### Installing CENT ####### \033[0m"
+go install -v github.com/xm1k3/cent@latest
 
 ####################################################################################
 
