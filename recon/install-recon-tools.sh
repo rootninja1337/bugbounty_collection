@@ -152,6 +152,11 @@ go install github.com/Josue87/gotator@latest
 
 ####################################################################################
 
+echo -e "\033[32m ####### Installing kitrunner ####### \033[0m"
+go install github.com/assetnote/kiterunner@latest
+
+####################################################################################
+
 echo -e "\033[32m ####### Installing massdns ####### \033[0m"
 sudo apt install massdns
 
