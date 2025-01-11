@@ -174,3 +174,9 @@ pip3 install py-altdns
 
 echo -e "\033[32m ####### Installing dnsgen ####### \033[0m"
 pip3 install dnsgen
+
+####################################################################################
+
+echo -e "\033[32m ####### Installing wafw00f ####### \033[0m"
+pip3 install wafw00f
+
