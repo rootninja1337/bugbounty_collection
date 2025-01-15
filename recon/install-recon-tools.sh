@@ -95,6 +95,10 @@ go install -v github.com/tomnomnom/waybackurls@latest
 echo -e "\033[32m ####### Installing meg ####### \033[0m"
 go install github.com/tomnomnom/meg@latest
 
+echo -e "\033[32m ####### Installing qsreplace ####### \033[0m"
+go install github.com/tomnomnom/qsreplace@latest
+
+
 echo -e "\033[32m ####### Installing ffuf ####### \033[0m"
 go install -v github.com/ffuf/ffuf@latest
 
