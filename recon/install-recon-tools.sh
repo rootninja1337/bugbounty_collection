@@ -18,6 +18,22 @@ then
 	exit 1;
 fi
 
+while true; do
+    read -p "run apt update and upgarde?(y/n) " yn
+    case $yn in
+        [Yy]* ) echo sudo apt update && sudo apt upgrade -y; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+
+if ! command -v pipx &>/dev/null
+then
+	sudo apt install pipx
+	pipx ensurepath
+fi
+
 ####################################################################################
 
 echo -e "\033[32m ####### Installing Project Discovery Tools ####### \033[0m"
@@ -76,6 +92,9 @@ go install -v github.com/tomnomnom/anew@latest
 echo -e "\033[32m ####### Installing waybackurls ####### \033[0m"
 go install -v github.com/tomnomnom/waybackurls@latest
 
+echo -e "\033[32m ####### Installing meg ####### \033[0m"
+go install github.com/tomnomnom/meg@latest
+
 echo -e "\033[32m ####### Installing ffuf ####### \033[0m"
 go install -v github.com/ffuf/ffuf@latest
 
@@ -95,7 +114,7 @@ wget https://github.com/Findomain/Findomain/releases/download/9.0.4/findomain-li
 ####################################################################################
 
 echo -e "\033[32m ####### Installing arjun ####### \033[0m"
-pip3 install arjun
+pipx install arjun
 
 ####################################################################################
 
@@ -168,15 +187,15 @@ sudo apt install masscan
 ####################################################################################
 
 echo -e "\033[32m ####### Installing altdns ####### \033[0m"
-pip3 install py-altdns
+pipx install py-altdns
 
 ####################################################################################
 
 echo -e "\033[32m ####### Installing dnsgen ####### \033[0m"
-pip3 install dnsgen
+pipx install dnsgen
 
 ####################################################################################
 
 echo -e "\033[32m ####### Installing wafw00f ####### \033[0m"
-pip3 install wafw00f
+pipx install wafw00f
 
