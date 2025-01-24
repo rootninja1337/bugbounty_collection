@@ -122,6 +122,11 @@ pipx install arjun
 
 ####################################################################################
 
+echo -e "\033[32m ####### Installing gau ####### \033[0m"
+go install github.com/lc/gau/v2/cmd/gau@latest
+
+####################################################################################
+
 echo -e "\033[32m ####### Installing gobuster ####### \033[0m"
 go install -v github.com/OJ/gobuster/v3@latest
 
