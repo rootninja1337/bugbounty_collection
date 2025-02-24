@@ -185,6 +185,11 @@ go install github.com/assetnote/kiterunner@latest
 
 ####################################################################################
 
+echo -e "\033[32m ####### Installing getJS ####### \033[0m"
+go install github.com/003random/getJS/v2@latest
+
+####################################################################################
+
 echo -e "\033[32m ####### Installing massdns ####### \033[0m"
 sudo apt install massdns
 
@@ -208,3 +213,7 @@ pipx install dnsgen
 echo -e "\033[32m ####### Installing wafw00f ####### \033[0m"
 pipx install wafw00f
 
+####################################################################################
+
+echo -e "\033[32m ####### Installing xnLinkFinder ####### \033[0m"
+pipx install git+https://github.com/xnl-h4ck3r/xnLinkFinder.git
