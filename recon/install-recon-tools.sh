@@ -77,6 +77,14 @@ go install -v github.com/hakluke/hakrawler@latest
 
 ####################################################################################
 
+echo -e "\033[32m ####### Installing gowitness ####### \033[0m"
+go install github.com/sensepost/gowitness@latest
+
+echo -e "\033[32m ####### Installing go-stare ####### \033[0m"
+go install github.com/dwisiswant0/go-stare@latest
+
+####################################################################################
+
 echo -e "\033[32m ####### Installing httprobe ####### \033[0m"
 go install -v github.com/tomnomnom/httprobe@latest
 
