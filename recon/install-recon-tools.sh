@@ -217,3 +217,8 @@ pipx install wafw00f
 
 echo -e "\033[32m ####### Installing xnLinkFinder ####### \033[0m"
 pipx install git+https://github.com/xnl-h4ck3r/xnLinkFinder.git
+
+####################################################################################
+
+echo -e "\033[32m ####### Installing commix ####### \033[0m"
+pipx install git+https://github.com/commixproject/commix.git
