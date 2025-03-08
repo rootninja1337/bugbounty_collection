@@ -188,6 +188,11 @@ go install github.com/Josue87/gotator@latest
 
 ####################################################################################
 
+echo -e "\033[32m ####### Installing deduplicate ####### \033[0m"
+go get github.com/nytr0gen/deduplicate
+
+####################################################################################
+
 echo -e "\033[32m ####### Installing kitrunner ####### \033[0m"
 go install github.com/assetnote/kiterunner@latest
 
