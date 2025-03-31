@@ -189,7 +189,7 @@ go install github.com/Josue87/gotator@latest
 ####################################################################################
 
 echo -e "\033[32m ####### Installing deduplicate ####### \033[0m"
-go get github.com/nytr0gen/deduplicate
+go install github.com/nytr0gen/deduplicate
 
 ####################################################################################
 
@@ -200,6 +200,12 @@ go install github.com/assetnote/kiterunner@latest
 
 echo -e "\033[32m ####### Installing getJS ####### \033[0m"
 go install github.com/003random/getJS/v2@latest
+
+####################################################################################
+
+echo -e "\033[32m ####### Installing trufflehog ####### \033[0m"
+git clone https://github.com/trufflesecurity/trufflehog.git
+cd trufflehog && go install && cd .. && rm -rf trufflehog
 
 ####################################################################################
 
@@ -230,6 +236,11 @@ pipx install wafw00f
 
 echo -e "\033[32m ####### Installing xnLinkFinder ####### \033[0m"
 pipx install git+https://github.com/xnl-h4ck3r/xnLinkFinder.git
+
+####################################################################################
+
+echo -e "\033[32m ####### Installing cmsmap ####### \033[0m"
+pipx install git+https://github.com/dionach/CMSmap.git
 
 ####################################################################################
 
