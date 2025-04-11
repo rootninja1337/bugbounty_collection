@@ -150,6 +150,11 @@ go install -v github.com/d3mondev/puredns/v2@latest
 
 ####################################################################################
 
+echo -e "\033[32m ####### Installing shuffledns ####### \033[0m"
+go install -v github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest
+
+####################################################################################
+
 echo -e "\033[32m ####### Installing gospider ####### \033[0m"
 go install github.com/jaeles-project/gospider@latest
 
