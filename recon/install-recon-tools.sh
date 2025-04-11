@@ -251,3 +251,8 @@ pipx install git+https://github.com/dionach/CMSmap.git
 
 echo -e "\033[32m ####### Installing commix ####### \033[0m"
 pipx install git+https://github.com/commixproject/commix.git
+
+####################################################################################
+
+echo -e "\033[32m ####### Installing robofinder ####### \033[0m"
+pipx install git+https://github.com/Spix0r/robofinder.git
