@@ -12,6 +12,7 @@ then
 	exit 1;
 fi
 
+
 if ! command -v python3 &>/dev/null
 then
 	echo "python is not installed!!!"
@@ -19,20 +20,23 @@ then
 fi
 
 while true; do
-    read -p "run apt update and upgarde?(y/n) " yn
-    case $yn in
-        [Yy]* ) echo sudo apt update && sudo apt upgrade -y; break;;
-        [Nn]* ) break;;
-        * ) echo "Please answer yes or no.";;
-    esac
+	read -p "run apt update and upgrade?(y/n) " yn
+	case $yn in
+		[Yy]* ) sudo apt update && sudo apt upgrade -y ; break;;
+		[Nn]* ) break;;
+		* ) echo "Please answer yes or no.";;
+	esac
 done
-
 
 if ! command -v pipx &>/dev/null
 then
 	sudo apt install pipx
 	pipx ensurepath
+	. $HOME/.bashrc
 fi
+
+
+sudo apt install -y pkg-config libssl-dev libpcap-dev
 
 ####################################################################################
 
@@ -42,16 +46,24 @@ then
 	go install -v github.com/projectdiscovery/pdtm/cmd/pdtm@latest
 fi
 
+
+
 while true; do
     read -p "Change pdtm binary path to $HOME/go/bin?(y/n) " yn
     case $yn in
-        [Yy]* ) echo -e "\nbinary-path: $HOME/go/bin" >> $HOME/.config/pdtm/config.yaml; break;;
-        [Nn]* ) break;;
+        [Yy]* ) 
+        	pdtm -ia -bp "$HOME/go/bin";
+        	echo -e "\nbinary-path: $HOME/go/bin" >> $HOME/.config/pdtm/config.yaml; 
+        	break;;
+        [Nn]* ) 
+	        pdtm -ia;
+        	break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
 
-pdtm -ia
+
+####################################################################################
 
 echo -e "\033[32m ####### Installing urlfinder ####### \033[0m"
 go install -v github.com/projectdiscovery/urlfinder/cmd/urlfinder@latest
@@ -77,14 +89,6 @@ go install -v github.com/hakluke/hakrawler@latest
 
 ####################################################################################
 
-echo -e "\033[32m ####### Installing gowitness ####### \033[0m"
-go install github.com/sensepost/gowitness@latest
-
-echo -e "\033[32m ####### Installing go-stare ####### \033[0m"
-go install github.com/dwisiswant0/go-stare@latest
-
-####################################################################################
-
 echo -e "\033[32m ####### Installing httprobe ####### \033[0m"
 go install -v github.com/tomnomnom/httprobe@latest
 
@@ -99,13 +103,6 @@ go install -v github.com/tomnomnom/anew@latest
 
 echo -e "\033[32m ####### Installing waybackurls ####### \033[0m"
 go install -v github.com/tomnomnom/waybackurls@latest
-
-echo -e "\033[32m ####### Installing meg ####### \033[0m"
-go install github.com/tomnomnom/meg@latest
-
-echo -e "\033[32m ####### Installing qsreplace ####### \033[0m"
-go install github.com/tomnomnom/qsreplace@latest
-
 
 echo -e "\033[32m ####### Installing ffuf ####### \033[0m"
 go install -v github.com/ffuf/ffuf@latest
@@ -130,11 +127,6 @@ pipx install arjun
 
 ####################################################################################
 
-echo -e "\033[32m ####### Installing gau ####### \033[0m"
-go install github.com/lc/gau/v2/cmd/gau@latest
-
-####################################################################################
-
 echo -e "\033[32m ####### Installing gobuster ####### \033[0m"
 go install -v github.com/OJ/gobuster/v3@latest
 
@@ -147,11 +139,6 @@ curl -sL https://raw.githubusercontent.com/epi052/feroxbuster/main/install-nix.s
 
 echo -e "\033[32m ####### Installing puredns ####### \033[0m"
 go install -v github.com/d3mondev/puredns/v2@latest
-
-####################################################################################
-
-echo -e "\033[32m ####### Installing shuffledns ####### \033[0m"
-go install -v github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest
 
 ####################################################################################
 
@@ -193,24 +180,19 @@ go install github.com/Josue87/gotator@latest
 
 ####################################################################################
 
-echo -e "\033[32m ####### Installing deduplicate ####### \033[0m"
-go install github.com/nytr0gen/deduplicate
+echo -e "\033[32m ####### Installing gowitness ####### \033[0m"
+go install github.com/sensepost/gowitness@latest
 
 ####################################################################################
 
 echo -e "\033[32m ####### Installing kitrunner ####### \033[0m"
 go install github.com/assetnote/kiterunner@latest
 
-####################################################################################
-
-echo -e "\033[32m ####### Installing getJS ####### \033[0m"
-go install github.com/003random/getJS/v2@latest
-
-####################################################################################
-
-echo -e "\033[32m ####### Installing trufflehog ####### \033[0m"
-git clone https://github.com/trufflesecurity/trufflehog.git
-cd trufflehog && go install && cd .. && rm -rf trufflehog
+if ! command -v kr &>/dev/null
+then
+	git clone https://github.com/assetnote/kiterunner.git
+	cd kitrunner && make build && cp dist/kr ~/go/bin && cd ~
+fi
 
 ####################################################################################
 
@@ -236,23 +218,3 @@ pipx install dnsgen
 
 echo -e "\033[32m ####### Installing wafw00f ####### \033[0m"
 pipx install wafw00f
-
-####################################################################################
-
-echo -e "\033[32m ####### Installing xnLinkFinder ####### \033[0m"
-pipx install git+https://github.com/xnl-h4ck3r/xnLinkFinder.git
-
-####################################################################################
-
-echo -e "\033[32m ####### Installing cmsmap ####### \033[0m"
-pipx install git+https://github.com/dionach/CMSmap.git
-
-####################################################################################
-
-echo -e "\033[32m ####### Installing commix ####### \033[0m"
-pipx install git+https://github.com/commixproject/commix.git
-
-####################################################################################
-
-echo -e "\033[32m ####### Installing robofinder ####### \033[0m"
-pipx install git+https://github.com/Spix0r/robofinder.git
