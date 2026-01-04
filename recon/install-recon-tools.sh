@@ -185,6 +185,11 @@ go install github.com/sensepost/gowitness@latest
 
 ####################################################################################
 
+echo -e "\033[32m ####### Installing x8 ####### \033[0m"
+go install -v github.com/sa7mon/s3scanner@latest
+
+####################################################################################
+
 echo -e "\033[32m ####### Installing kitrunner ####### \033[0m"
 go install github.com/assetnote/kiterunner@latest
 
@@ -218,3 +223,5 @@ pipx install dnsgen
 
 echo -e "\033[32m ####### Installing wafw00f ####### \033[0m"
 pipx install wafw00f
+
+####################################################################################
